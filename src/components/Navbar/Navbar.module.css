@@ -1,0 +1,32 @@
+.navbar {
+   display: flex;
+   align-items: center;
+   padding: 20px 16px;
+   background: gray;
+}
+
+.logo {
+   font-size: 17px;
+   font-weight: 700;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #64192e;
+   margin-right: 30px;
+}
+
+
+.link {
+   font-size: 17px;
+   font-weight: 700;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: black;
+}
+
+.link + .link {
+   margin-left: 15px;
+}
+
+.active {
+   text-decoration: underline;
+}
