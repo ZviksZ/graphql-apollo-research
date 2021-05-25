@@ -1,8 +1,9 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
+import React              from "react";
+import { Route, Switch }  from "react-router-dom";
+import { Navbar }         from "./components/Navbar/Navbar";
+import {MainPage}         from "./pages/MainPage";
 import { PostDetailPage } from "./pages/PostDetailPage";
-import { PostsPage } from "./pages/PostsPage";
+import { PostsPage }      from "./pages/PostsPage";
 
 export const useRoutes = () => {
   return (
@@ -10,7 +11,7 @@ export const useRoutes = () => {
       <Navbar />
       <Switch>
         <Route path="/" exact>
-          Main Page
+          <MainPage/>
         </Route>
         <Route path="/posts" exact>
           <PostsPage />

@@ -1,7 +1,8 @@
-import {useQuery}    from "@apollo/client";
-import React         from "react";
-import { useParams } from "react-router-dom";
-import {getPost}     from "../graphql/modules/posts/queries/getPost";
+import {useQuery}           from "@apollo/client";
+import React                from "react";
+import {NavLink, useParams} from "react-router-dom";
+import {PostDetail}         from "../components/PostDetail/PostDetail";
+import {getPost}            from "../graphql/modules/posts/queries/getPost";
 
 export const PostDetailPage = () => {
   const { id } = useParams();
@@ -11,5 +12,8 @@ export const PostDetailPage = () => {
    if (loading) {
       return <>LOADING...</>
    }
-  return <>{JSON.stringify(data)}</>;
+  return <>
+     <NavLink to={"/posts"}>back to posts</NavLink>
+   <PostDetail post={data.post}/>
+  </>;
 };

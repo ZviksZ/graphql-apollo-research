@@ -30,3 +30,7 @@
 .active {
    text-decoration: underline;
 }
+
+.theme {
+   margin-left: auto;
+}

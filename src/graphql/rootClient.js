@@ -1,10 +1,15 @@
-import { ApolloClient } from "@apollo/client";
-import { rootCache }    from "./rootCache";
-import {rootResolver}   from "./rootResolver";
+import { ApolloClient }                    from "@apollo/client";
+import {LocalStorageWrapper, persistCache} from "apollo3-cache-persist";
+import { rootCache }                       from "./rootCache";
+import {rootResolver}                      from "./rootResolver";
+import {rootTypeDefs}                      from "./rootTypeDefs";
+
+
 
 export const rootClient = new ApolloClient({
   uri: "https://graphqlzero.almansi.me/api",
   cache: rootCache,
+  typeDefs: rootTypeDefs,
   resolvers: rootResolver,
   /*headers: {
       authorization: localStorage.getItem('token') || '',
@@ -13,3 +18,5 @@ export const rootClient = new ApolloClient({
    },*/
   connectToDevTools: true,
 });
+
+
