@@ -1,11 +1,11 @@
-import {postsStateVar} from "./variables";
+import { postsStateVar } from "./variables";
 
 export const postsQueryTypePolicy = {
-   postsState: {
-      read() {
-         return postsStateVar();
-      }
-   },
+  postsState: {
+    read() {
+      return postsStateVar();
+    },
+  },
   filteredPosts: {
     read(postsData, { variables, readField }) {
       const posts = readField("posts");
@@ -20,15 +20,18 @@ export const postsQueryTypePolicy = {
 };
 
 export const postsTypePolicy = {
+  Post: {
+    keyFields: (data) => `p${data.id}`,
+  },
   PostsPage: {
     keyFields: () => `posts`,
-     fields: {
-       data: {
-          read(data, { variables, readField }) {
-             console.log('READ DATA', data);
-             return data
-          },
-       }
-     }
+    fields: {
+      data: {
+        read(data, { variables, readField }) {
+          console.log("READ DATA", data);
+          return data;
+        },
+      },
+    },
   },
 };

@@ -6,6 +6,14 @@ export const getPost = gql`
     id
     title
     body
+    comments {
+      data {
+         id
+         name
+         email
+         body
+      }
+    }
   }
 }
 `;
