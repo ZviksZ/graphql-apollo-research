@@ -21,6 +21,29 @@ export const MainPage = () => {
    const changeThemeHandler = () => {
       themeVar(themeVar() === 'dark' ? 'white' : 'dark')
    }
+
+   //Запись и чтение по query в cache
+   /*useEffect(() => {
+      client.writeQuery({
+        query: gql`
+        query GetCartItems {
+          posts
+        }
+      `,
+        data: {
+          posts: data
+        }
+      });
+   }, [data, client])
+
+  console.log('cartItems', client.readQuery({
+     query: gql`
+       query GetCartItems {
+         cartItems
+       }
+     `,
+   }));*/
+
    return (
       <>
          <button onClick={set}>Write query theme</button>

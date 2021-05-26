@@ -22,6 +22,14 @@ export const postsQueryTypePolicy = {
 export const postsTypePolicy = {
   Post: {
     keyFields: (data) => `p${data.id}`,
+    fields: {
+      body: {
+        read(data, { variables, readField }) {
+          console.log("READ BODY - name of field", data);
+          return data;
+        },
+      }
+    }
   },
   PostsPage: {
     keyFields: () => `posts`,
