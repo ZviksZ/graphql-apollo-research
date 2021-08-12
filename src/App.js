@@ -19,6 +19,7 @@ export const App = () => {
         console.error('Error restoring Apollo cache', error);
       }
     }
+    
     persistLoad()*/
   }, []);
 
